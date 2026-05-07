@@ -1,4 +1,5 @@
-mysql> show databases;
+/* SQL COMMANDS */
+mysql> show databases;/* It use to show the Available DATA */
 +---------------------------+
 | Database                  |
 +---------------------------+
@@ -13,9 +14,9 @@ mysql> show databases;
 +---------------------------+
 8 rows in set (0.04 sec)
 
-mysql> use ecommerce;
+mysql> use ecommerce;/* It use to select the Perticular Database */
 Database changed
-mysql> show tables;
+mysql> show tables;/* It use to show What is inside the Database */
 +---------------------+
 | Tables_in_ecommerce |
 +---------------------+
@@ -25,7 +26,7 @@ mysql> show tables;
 +---------------------+
 3 rows in set (0.02 sec)
 
-mysql> desc customer;
+mysql> desc customer;/* It is use to Describ the All database */
 +--------------+--------------+------+-----+---------+-------+
 | Field        | Type         | Null | Key | Default | Extra |
 +--------------+--------------+------+-----+---------+-------+
@@ -39,32 +40,32 @@ mysql> desc customer;
 +--------------+--------------+------+-----+---------+-------+
 7 rows in set (0.01 sec)
 
-mysql> select * from customer;
+mysql> select * from customer;/* It is use to Retrive All the data in the Database */
 Empty set (0.03 sec)
 
-mysql> insert into customer(customer_ID, name, city, email, address, phone_number, pincode)values('C101','VINIT','Thane','salunkhe@gmail.com','shankarmandir','9967780832','400605');
+mysql> insert into customer(customer_ID, name, city, email, address, phone_number, pincode)values('C101','ROHIT','Thane','morbale@gmail.com','dattamandir','9326703846','400605');/* Insert Commanad use to Adding the valuse in the Database */
 Query OK, 1 row affected (0.01 sec)
 
 mysql> select * from customer;
 +-------------+-------+-------+--------------------+---------------+--------------+---------+
 | customer_id | name  | city  | Email              | address       | phone_number | pincode |
 +-------------+-------+-------+--------------------+---------------+--------------+---------+
-| C101        | VINIT | Thane | salunkhe@gmail.com | shankarmandir | 9967780832   |  400605 |
+| C101        | ROHIT | Thane | morbale@gmail.com |  dattamandir    | 9326703846  |  400605 |
 +-------------+-------+-------+--------------------+---------------+--------------+---------+
 1 row in set (0.00 sec)
 
-mysql> select customer_ID, name, pincode from customer;
+mysql> select customer_ID, name, pincode from customer;/* It is use to Select the specific Column in the Database */
 +-------------+-------+---------+
 | customer_ID | name  | pincode |
 +-------------+-------+---------+
-| C101        | VINIT |  400605 |
+| C101        | ROHIT |  400605 |
 +-------------+-------+---------+
 1 row in set (0.00 sec)
 
-mysql> insert into customer values('C102','VINI','Kalwa','salunke@gmail.com','mandir','9967780831','400607');
+mysql> insert into customer values('C102','VINIT','Kalwa','salunke@gmail.com','dattamandir','9967780831','400607');
 Query OK, 1 row affected (0.01 sec)
 
-mysql> insert into customer values('C103','ROHIT','Ghansoli','rohit@gmail.com','dattamandir','9367780831','400608'),('C104','SAMADHAN','Nerul','sam@gmail.com','ICIC BANK','9784484809','400603');
+mysql> insert into customer values('C103','RUSHI','Ghansoli','rohit@gmail.com','shivamandir','9367780831','400608'),('C104','SAMADHAN','Nerul','sam@gmail.com','ICIC BANK','9784484809','400603');
 Query OK, 2 rows affected (0.04 sec)
 Records: 2  Duplicates: 0  Warnings: 0
 
@@ -72,9 +73,9 @@ mysql> select * from customer;
 +-------------+----------+----------+--------------------+---------------+--------------+---------+
 | customer_id | name     | city     | Email              | address       | phone_number | pincode |
 +-------------+----------+----------+--------------------+---------------+--------------+---------+
-| C101        | VINIT    | Thane    | salunkhe@gmail.com | shankarmandir | 9967780832   |  400605 |
-| C102        | VINI     | Kalwa    | salunke@gmail.com  | mandir        | 9967780831   |  400607 |
-| C103        | ROHIT    | Ghansoli | rohit@gmail.com    | dattamandir   | 9367780831   |  400608 |
+| C101        | ROHIT   | Thane    | morbale@gmail.com  | dattamandir    | 9326703846   |  400605 |
+| C102        | VINIT   | Kalwa    | salunke@gmail.com  | shankarmandir  | 9967780831   |  400607 |
+| C103        | RUSHI    | Ghansoli | rushi@gmail.com    | shivamandir   | 9367780831   |  400608 |
 | C104        | SAMADHAN | Nerul    | sam@gmail.com      | ICIC BANK     | 9784484809   |  400603 |
 +-------------+----------+----------+--------------------+---------------+--------------+---------+
 4 rows in set (0.00 sec)
@@ -93,6 +94,7 @@ mysql> desc customer;
 +--------------+--------------+------+-----+---------+-------+
 7 rows in set (0.01 sec)
 
+    
 mysql> alter table customer modify Customer_id varchar(10)  not null;
 Query OK, 0 rows affected (0.05 sec)
 Records: 0  Duplicates: 0  Warnings: 0
@@ -258,9 +260,9 @@ mysql> select * from customer;
 +-------------+----------+----------+--------------------+---------------+--------------+---------+---------+-------+---------+
 | Customer_id | name     | city     | Email_ID           | address       | phone_number | pincode | bill_no | state | country |
 +-------------+----------+----------+--------------------+---------------+--------------+---------+---------+-------+---------+
-| C101        | VINIT    | Thane    | salunkhe@gmail.com | shankarmandir | 9967780832   |  400605 |       0 |       |         |
-| C102        | VINI     | Kalwa    | salunke@gmail.com  | mandir        | 9967780831   |  400607 |       0 |       |         |
-| C103        | ROHIT    | Ghansoli | rohit@gmail.com    | dattamandir   | 9367780831   |  400608 |       0 |       |         |
+| C101        | ROHIT    | Thane    | morbale@gmail.com | dattamandir    | 9326703846   |  400605 |       0 |       |         |
+| C102        | VINIT    | Kalwa    | salunke@gmail.com  | shankarmandir | 9967780831   |  400607 |       0 |       |         |
+| C103        | RUSHI    | Ghansoli | rushi@gmail.com    | shivamandir   | 9367780831   |  400608 |       0 |       |         |
 | C104        | SAMADHAN | Nerul    | sam@gmail.com      | ICIC BANK     | 9784484809   |  400603 |       0 |       |         |
 +-------------+----------+----------+--------------------+---------------+--------------+---------+---------+-------+---------+
 4 rows in set (0.00 sec)
@@ -272,8 +274,8 @@ mysql> select * from customer;
 +-------------+----------+-------+--------------------+---------------+--------------+---------+---------+-------+---------+
 | Customer_id | name     | city  | Email_ID           | address       | phone_number | pincode | bill_no | state | country |
 +-------------+----------+-------+--------------------+---------------+--------------+---------+---------+-------+---------+
-| C101        | VINIT    | Thane | salunkhe@gmail.com | shankarmandir | 9967780832   |  400605 |       0 |       |         |
-| C102        | VINI     | Kalwa | salunke@gmail.com  | mandir        | 9967780831   |  400607 |       0 |       |         |
+| C101        | ROHIT    | Thane | morbale@gmail.com  | dattamandir   | 9326703846   |  400605 |       0 |       |         |
+| C102        | VINIT    | Kalwa | salunke@gmail.com  | shankarmandir | 9967780831   |  400607 |       0 |       |         |
 | C104        | SAMADHAN | Nerul | sam@gmail.com      | ICIC BANK     | 9784484809   |  400603 |       0 |       |         |
 +-------------+----------+-------+--------------------+---------------+--------------+---------+---------+-------+---------+
 3 rows in set (0.00 sec)
@@ -282,8 +284,8 @@ mysql> select * from customer;
 +-------------+----------+-------+--------------------+---------------+--------------+---------+---------+-------+---------+
 | Customer_id | name     | city  | Email_ID           | address       | phone_number | pincode | bill_no | state | country |
 +-------------+----------+-------+--------------------+---------------+--------------+---------+---------+-------+---------+
-| C101        | VINIT    | Thane | salunkhe@gmail.com | shankarmandir | 9967780832   |  400605 |       0 |       |         |
-| C102        | VINI     | Kalwa | salunke@gmail.com  | mandir        | 9967780831   |  400607 |       0 |       |         |
+| C101        | ROHIT    | Thane | morbale@gmail.com  | dattamandir   | 9326703846   |  400605 |       0 |       |         |
+| C102        | VINIT    | Kalwa | salunke@gmail.com  | shankarmandir | 9967780831   |  400607 |       0 |       |         |
 | C104        | SAMADHAN | Nerul | sam@gmail.com      | ICIC BANK     | 9784484809   |  400603 |       0 |       |         |
 +-------------+----------+-------+--------------------+---------------+--------------+---------+---------+-------+---------+
 3 rows in set (0.00 sec)
@@ -295,8 +297,8 @@ mysql> select * from customer;
 +-------------+----------+-------+--------------------+---------------+--------------+---------+---------+-------+---------+
 | Customer_id | name     | city  | Email_ID           | address       | phone_number | pincode | bill_no | state | country |
 +-------------+----------+-------+--------------------+---------------+--------------+---------+---------+-------+---------+
-| C101        | VINIT    | Thane | salunkhe@gmail.com | shankarmandir | 9967780832   |  400605 |       0 |       |         |
-| C102        | VINI     | Kalwa | salunke@gmail.com  | mandir        | 9967780831   |  400607 |       0 |       |         |
+| C101        | ROHIT    | Thane | morbale@gmail.com  | dattamandir   | 9326703846   |  400605 |       0 |       |         |
+| C102        | VINIT    | Kalwa | salunke@gmail.com  | shankarmandir | 9967780831   |  400607 |       0 |       |         |
 | C104        | SAMADHAN | Nerul | sam@gmail.com      | ICIC BANK     | 9784484809   |  400603 |       0 |       |         |
 +-------------+----------+-------+--------------------+---------------+--------------+---------+---------+-------+---------+
 3 rows in set (0.00 sec)
@@ -336,14 +338,14 @@ mysql> desc customer;
 +--------------+--------------+------+-----+---------+-------+
 10 rows in set (0.00 sec)
 
-mysql>  insert into demo values('101','VINIT');
+mysql>  insert into demo values('101','ROHIT');
 Query OK, 1 row affected (0.01 sec)
 
 mysql> select * from demo;
 +-----+-------+
 | id  | name  |
 +-----+-------+
-| 101 | VINIT |
+| 101 | ROHIT |
 +-----+-------+
 1 row in set (0.00 sec)
 
@@ -365,6 +367,6 @@ mysql> desc demo;
 mysql> drop table orders;
 Query OK, 0 rows affected (0.05 sec)
 
-mysql> desc orders;
+mysql> desc orders;/* Error Occure Becaus Order table are Droped in the Database */
 ERROR 1146 (42S02): Table 'ecommerce.orders' doesn't exist
 mysql>
